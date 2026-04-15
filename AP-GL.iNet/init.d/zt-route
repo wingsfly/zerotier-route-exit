@@ -1,0 +1,17 @@
+cat > /etc/init.d/zt-route << 'EOF'
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=10
+
+start() {
+    /root/zt-route.sh start
+}
+
+stop() {
+    /root/zt-route.sh stop
+}
+EOF
+
+chmod +x /etc/init.d/zt-route
+/etc/init.d/zt-route enable
